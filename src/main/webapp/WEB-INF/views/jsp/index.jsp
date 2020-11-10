@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Maven + Spring MVC </title>
+<title>Maven + Spring MVC + GitHub </title>
 
 <spring:url value="/resources/core/css/hello.css" var="coreCss" />
 <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
@@ -41,7 +41,7 @@
 	<div class="row">
 		<div class="col-md-8">
 			<h2>Welcome To Mithun Technologies, Marathahalli, Banglore. near icici</h2>
-			<h3>Contact @ +91-8610705304 ,+91-7799325704</h3>
+			<h3>Contact @ +91-8610705304 ,+91-8341548228</h3>
 		</div>	
 	</div>
 
