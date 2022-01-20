@@ -26,7 +26,7 @@ pipeline {
         }
         stage ('push the docker image'){
             steps {
-              sh "docker login -u allureddy -p Ashok@4512"
+              sh "docker login -u allureddy -p ...."
               sh "docker push allureddy/new"
             }
         }
