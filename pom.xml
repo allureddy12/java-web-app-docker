@@ -101,13 +101,13 @@
 	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.110.163.118:8081/repository/maven-releases/</url>
+	      <name> Releases Nexus Repository</name>
+	      <url>http://3.111.37.155:8081/repository/new-releases/</url>
 	    </repository>
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.110.163.118:8081/repository/maven-snapshots/</url>
+	      <name>  Snapshot Nexus Repository </name>
+	      <url>http://3.111.37.155:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	</distributionManagement>
 	
