@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('checkout ') {
             steps {
-               git branch: 'master', url: 'https://github.com/allureddy1/java-web-app-docker.git'
+               git branch: 'master', url: 'https://github.com/alluredduhcl/java-web-app-docker.git'
             }
         }
         stage ('build the code'){
