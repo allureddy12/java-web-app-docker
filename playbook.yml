@@ -3,12 +3,10 @@
   become: true
   tasks:
   - name: create docker image
-    command: docker build -t ashok:1 .
-    args:
-      chdir: /home/ubuntu
+    command: docker build -t ashok .
   - name: create tag to push image
-    command: docker tag ashok:1 allureddy/ashok:2
+    command: docker tag ashok:1 allureddy/ashok
   - name: login to the docker hub
     command: docker login -u allureddy -p Ashok@4512
   - name: push the docker image
-    command: docker push allureddy/ashok:2
+    command: docker push allureddy/ashok
