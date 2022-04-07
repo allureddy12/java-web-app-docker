@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    tools{
+        maven 'maven'
+    }    
+    stages {
+        stage ('check out the code'){
+         steps {
+          git branch: 'master', url: 'https://github.com/alluredduhcl/java-web-app-docker.git'  
+         }
+        }
+        stage ('build the code'){
+         steps {
+          sh "mvn clean package"
+         }
+        }
+        stage ('push the artifacts'){
+        steps {
+            sshPublisher(publishers: [sshPublisherDesc(configName: 'ansible-server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+        }
+        }
+        stage ('copy the atrifact'){
+        steps {
+            sshagent(['ansible-machine']) {
+    // some block
+    sh " scp -o StrictHostKeyChecking=no deployment.yml ubuntu@3.110.196.26:/home/ubuntu "
+    sh "ssh ubuntu@3.110.196.26 -o StrictHostKeyChecking=no ansible-playbook playbook.yml "
+}
+        }
+        }
+    stage ('deploy the application in k8s'){
+    steps {
+      sh "kubectl apply -f deployment.yml"
+    
+    }
+    }
+    }
+}
