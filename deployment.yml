@@ -5,8 +5,7 @@ metadata:
   name: newdeployment
 spec:
   replicas: 2
-  strategy:
-    type: Recreate
+  
   selector:
     matchLabels:
       app: sample
@@ -18,7 +17,7 @@ spec:
     spec:
      containers:
      - name: newcontainer
-       image: allureddy/ashok
+       image: allureddy/allu
        ports:
        - containerPort: 8080
 
